@@ -1,0 +1,161 @@
+Italia
+Inverno:
+Temperatura maior: 15
+Temperatura menor: 0
+Verao:
+Temperatura maior: 35
+Temperatura menor: 20
+Espanha
+Inverno:
+Temperatura maior: 20
+Temperatura menor: 0
+Verao:
+Temperatura maior: 40
+Temperatura menor: 20
+Grecia
+Inverno:
+Temperatura maior: 18
+Temperatura menor: 5
+Verao:
+Temperatura maior: 35
+Temperatura menor: 25
+Turquia
+Inverno:
+Temperatura maior: 15
+Temperatura menor: -5
+Verao:
+Temperatura maior: 35
+Temperatura menor: 20
+Croacia
+Inverno:
+Temperatura maior: 10
+Temperatura menor: 0
+Verao:
+Temperatura maior: 30
+Temperatura menor: 20
+Portugal
+Inverno:
+Temperatura maior: 15
+Temperatura menor: 5
+Verao:
+Temperatura maior: 35
+Temperatura menor: 20
+Franca
+Inverno:
+Temperatura maior: 10
+Temperatura menor: -5
+Verao:
+Temperatura maior: 30
+Temperatura menor: 15
+Alemanha
+Inverno:
+Temperatura maior: 5
+Temperatura menor: -10
+Verao:
+Temperatura maior: 25
+Temperatura menor: 10
+Reino Unido
+Inverno:
+Temperatura maior: 7
+Temperatura menor: -5
+Verao:
+Temperatura maior: 25
+Temperatura menor: 10
+Belgica
+Inverno:
+Temperatura maior: 6
+Temperatura menor: -5
+Verao:
+Temperatura maior: 25
+Temperatura menor: 10
+Holanda
+Inverno:
+Temperatura maior: 6
+Temperatura menor: -5
+Verao:
+Temperatura maior: 25
+Temperatura menor: 10
+Luxemburgo
+Inverno:
+Temperatura maior: 5
+Temperatura menor: -5
+Verao:
+Temperatura maior: 25
+Temperatura menor: 10
+Polonia
+Inverno:
+Temperatura maior: 0
+Temperatura menor: -20
+Verao:
+Temperatura maior: 30
+Temperatura menor: 10
+República Tcheca
+Inverno:
+Temperatura maior: 0
+Temperatura menor: -15
+Verao:
+Temperatura maior: 30
+Temperatura menor: 15
+Hungria
+Inverno:
+Temperatura maior: 5
+Temperatura menor: -10
+Verao:
+Temperatura maior: 35
+Temperatura menor: 15
+Eslováquia
+Inverno:
+Temperatura maior: -5
+Temperatura menor: -20
+Verao:
+Temperatura maior: 30
+Temperatura menor: 15
+Romênia
+Inverno:
+Temperatura maior: 0
+Temperatura menor: -15
+Verao:
+Temperatura maior: 35
+Temperatura menor: 20
+Bulgária
+Inverno:
+Temperatura maior: 5
+Temperatura menor: -10
+Verao:
+Temperatura maior: 35
+Temperatura menor: 20
+Noruega
+Inverno:
+Temperatura maior: 5
+Temperatura menor: -25
+Verao:
+Temperatura maior: 30
+Temperatura menor: 10
+Secia
+Inverno:
+Temperatura maior: 3
+Temperatura menor: -20
+Verao:
+Temperatura maior: 25
+Temperatura menor: 10
+Finlândia
+Inverno:
+Temperatura maior: 2
+Temperatura menor: -25
+Verao:
+Temperatura maior: 27
+Temperatura menor: 10
+Dinamarca
+Inverno:
+Temperatura maior: 5
+Temperatura menor: -5
+Verao:
+Temperatura maior: 25
+Temperatura menor: 15
+Islandia
+Inverno:
+Temperatura maior: 3
+Temperatura menor: -15
+Verao:
+Temperatura maior: 20
+Temperatura menor: 5

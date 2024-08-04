@@ -1,6 +1,6 @@
 
-import random,os
-
+import random,os,__random
+from temps_calc import *
 def create_doubleList(a,b):
     matriz = {}
     for x in range(a):
@@ -43,26 +43,29 @@ for i in range(mes):
     for ii in range(dia):
         mediasmes[i][ii] = 0
       
-    
+
 print("Temperatura de todos os meses:\n")
 print("(Aperte enter para continuar) ")
 pais = input("Qual o pais que você deseja escolher?")
 enter = input()
 os.system("cls")
 def mediaanual(mininverno,maxinverno,minverao,maxverao,inverno,primavera,outono,verao):
+    r = __random.CustomRandom()
     for i in range(dia):
         for ii in range(horas):
             if m+1 in inverno:
-                mediadia[i][ii] = random.randint(mininverno,maxinverno)
+                mediadia[i][ii] = r.randint(mininverno,maxinverno)
             elif m+1 in outono:
-                mediadia[i][ii] = random.randint(minverao-10,maxverao-10)
+                mediadia[i][ii] = r.randint(minverao-10,maxverao-10)
             elif m+1 in primavera:
-                mediadia[i][ii] = random.randint(mininverno+5,maxinverno+5)
+                mediadia[i][ii] = r.randint(mininverno+5,maxinverno+5)
             elif m+1 in verao:
-                mediadia[i][ii] = random.randint(minverao,maxverao)
+                mediadia[i][ii] = r.randint(minverao,maxverao)
 for m in range(mes):
-    if pais == "EUA":
-        mediaanual(0,20,20,40,[12,1,2],[3,4,5],[9,10,11],[6,7,8])
+    _pais = Avarage(pais)
+    _pais.make_avarage()
+    print(_pais.maxverao)
+    mediaanual(_pais.mininv,_pais.maxinv,_pais.minverao,_pais.maxverao,[12,1,2],[3,4,5],[9,10,11],[6,7,8])
     
     #todas as medias de todos os meses
     print(" Mês ",m+1,":\n")
