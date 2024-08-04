@@ -1,5 +1,5 @@
 
-import random,os,__random
+import random,os,__random,SimpleFile as SF
 from temps_calc import *
 def create_doubleList(a,b):
     matriz = {}
@@ -14,6 +14,11 @@ def create_list(a):
     for x in range(a):
         vetor.append(x)
     return vetor
+#anonimo: acesso apenas a media de cada estação
+#conta registrada: acesso a media de cada estação e de todos os meses
+#conta premium: acesso a todos os dias registrados
+#conta premim extra: acesso ao código fonte e direito de uso
+conta = "anonimo"
 
 horas = 24 
 dia = 8
@@ -28,10 +33,45 @@ menor = 0
 datad = 0
 datam = 0
 enter = ""
+
+def login():
+    pass
+def registrar():
+    a = True
+    while(a):
+        print("digite seu email: ")
+        email = input()
+        print("digite sua senha: ")
+        senha = input()
+        contas = SF.File("contas")
+        contas.create()
+        for x in range(len(contas.all_lines())):
+            a = contas.read_line(x)
+            if a == email.strip():
+                print("conta já registrada") 
+            elif x == len(contas.all_lines()):
+                contas.read_line()
+                contas.append("-"*10)
+                contas.append(email)
+                contas.append(senha)
+                a = False
+            
+
+
 os.system("cls")
 print("Bem vindo ao Thermal Average!\n\n")
 print("O Thermal Average é um programa que registra as temperaturas diárias de um pais ao longo dos meses.\n")
-print("Aqui te mostraremos: média mensal de 8 dias dos meses, o dia e mês mais quente/frio do ano e a média da temperatura. ")
+print("Você tem uma conta? ")
+enter = input()
+if enter == "sim":
+    login()
+elif enter == "não":
+    print("deseja registrar? ")
+    enter = input()
+    if enter == "sim": 
+        registrar()
+
+
 print("\n\nAperte enter para começar ")
 enter = input()
 os.system("cls")
