@@ -131,7 +131,7 @@ Temperatura menor: -25
 Verao:
 Temperatura maior: 30
 Temperatura menor: 10
-Secia
+Suecia
 Inverno:
 Temperatura maior: 3
 Temperatura menor: -20

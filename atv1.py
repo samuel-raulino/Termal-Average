@@ -14,11 +14,10 @@ def create_list(a):
     for x in range(a):
         vetor.append(x)
     return vetor
-#anonimo: acesso apenas a media de cada estação
-#conta registrada: acesso a media de cada estação e de todos os meses
+#anonimo: acesso a media de cada estação e de todos os meses
 #conta premium: acesso a todos os dias registrados
 #conta premim extra: acesso ao código fonte e direito de uso
-conta = "anonimo"
+conta = "an"
 
 horas = 24 
 dia = 8
@@ -33,28 +32,75 @@ menor = 0
 datad = 0
 datam = 0
 enter = ""
-
+def print_an(a):
+    if conta == "an":
+        print(a)
+def print_log(a):
+    if conta == "log":
+        print(a)
+def enter_an():
+    if conta == "an":
+        input()
+def enter_log():
+    if conta == "log":
+        input()
+def input_prem():
+    if conta == "prem":
+        return input()
+def print_prem(a):
+    if conta == "prem":
+        print(a)
+def enter_prem():
+    if conta == "prem":
+        input()
+def input_log():
+    if conta == "log":
+        return input()
 def login():
-    pass
-def registrar():
-    a = True
+    os.system("cls")
+    a = True 
     while(a):
+        print("---Login---")
+        email = input("Digite seu email: ")
+        senha = input("Digite sua senha: ")
+        contas = SF.File("contas")
+        contas.create()
+        for x in range(len(contas.all_lines())):
+            email_reg = contas.read_line(x)
+            senha_reg = contas.read_line(x+1)
+            if email_reg.strip() == email.strip():
+                if senha_reg.strip() == senha.strip():
+                    print("login feito com sucesso") 
+                    conta = "log"
+                    a = False
+            elif x == len(contas.all_lines()):
+                print("erro conta não encontrada\nTente novamente")
+                
+    
+def registrar():
+    contas = SF.File("contas")
+    contas.create()
+    os.system("cls")
+    print("---registro---")
+    prob = True
+    while(prob):
         print("digite seu email: ")
         email = input()
         print("digite sua senha: ")
         senha = input()
-        contas = SF.File("contas")
-        contas.create()
+        
         for x in range(len(contas.all_lines())):
             a = contas.read_line(x)
-            if a == email.strip():
+            if a.strip() == email.strip():
                 print("conta já registrada") 
-            elif x == len(contas.all_lines()):
-                contas.read_line()
-                contas.append("-"*10)
-                contas.append(email)
-                contas.append(senha)
-                a = False
+        prob = False
+    contas.append("-"*10)
+    contas.append(email)
+    contas.append(senha)
+    contas.append("premium: False")
+    contas.append("cpf: ")
+    contas.append("conta corrente: ")
+    
             
 
 
@@ -70,6 +116,7 @@ elif enter == "não":
     enter = input()
     if enter == "sim": 
         registrar()
+        login()
 
 
 print("\n\nAperte enter para começar ")
@@ -84,8 +131,7 @@ for i in range(mes):
         mediasmes[i][ii] = 0
       
 
-print("Temperatura de todos os meses:\n")
-print("(Aperte enter para continuar) ")
+
 pais = input("Qual o pais que você deseja escolher?")
 enter = input()
 os.system("cls")
@@ -104,23 +150,22 @@ def mediaanual(mininverno,maxinverno,minverao,maxverao,inverno,primavera,outono,
 for m in range(mes):
     _pais = Avarage(pais)
     _pais.make_avarage()
-    print(_pais.maxverao)
     mediaanual(_pais.mininv,_pais.maxinv,_pais.minverao,_pais.maxverao,[12,1,2],[3,4,5],[9,10,11],[6,7,8])
     
     #todas as medias de todos os meses
-    print(" Mês ",m+1,":\n")
+    print_log(" Mês "+str(m+1)+":\n")
     for i in range(dia):
         for ii in range(horas):
             mediasmes[m][i]+= mediadia[i][ii]
         mediasmes[m][i]/= horas 
-        print(" Dia ",i+1,": ",int(mediasmes[m][i]),"°C \n")
+        print_log(" Dia "+str(i+1)+": "+str(int(mediasmes[m][i]))+"°C \n")
       
-print(" (Aperte enter para continuar) ")
-enter = input()
+print_log(" (Aperte enter para continuar) ")
+enter_log()
 os.system("cls")
 print("\n")
 
-print("(Aperte enter para continuar) ")
+print_log("(Aperte enter para continuar) ")
 enter = input()
 os.system("cls")
 print(" Temperatura média de todos os meses: ")
@@ -132,7 +177,7 @@ for i in range(mes):
         mediames[i] += mediasmes[i][ii]
         
     mediames[i]/=dia 
-    print("\n Mês: ",i+1," \n Média de temperatura: ",int(mediames[i]),"°C")
+    print("\n Mês: "+str(i+1)+" \n Média de temperatura: "+str(int(mediames[i]))+"°C")
     print("\n (Aperte enter para continuar) ")
     enter = input()
     os.system("cls")
@@ -147,7 +192,7 @@ for i in range(mes):
             datam = i+1
           
 
-print("Dia: ",datad," Mes:",datam,"\n Média de temperatura no dia: ",int(maior),"°C")
+print_log("Dia: "+str(datad)+" Mes:"+str(datam)+"\n Média de temperatura no dia: "+str(int(maior))+"°C")
 enter = input()
 os.system("cls")
 #menor temperatura do ano
@@ -160,7 +205,7 @@ for i in range(mes):
             datad = ii+1
             datam = i+1
 
-print("Dia: ",datad," Mes: ",datam,"\n Média de temperatura no dia: ",int(menor),"°C")
+print("Dia: "+str(datad)+" Mes: "+str(datam)+"\n Média de temperatura no dia: "+str(int(menor))+"°C")
 enter = input()
 
 os.system("cls")
@@ -170,9 +215,9 @@ for i in range(mes):
     if maior < mediames[i]:
         maior = mediames[i]
         datam = i+1
-print(" Mês mais quente do ano: ",datam)
-print( "\n Média de temperatura no mês: ",int(maior),"°C\n")
-enter = input()
+print_prem(" Mês mais quente do ano: "+str(datam))
+print_prem( "\n Média de temperatura no mês: "+str(int(maior))+"°C\n")
+input_prem()
 os.system("cls")
 
 
@@ -181,11 +226,29 @@ for i in range(mes):
     if menor > mediames[i]:
         menor = mediames[i]
         datam = i+1
-print("\n Mês mais frio do ano: ",datam)
-print("\n Média de temperatura no mês: ",int(menor),"°C\n")
+print_prem("\n Mês mais frio do ano: ",datam)
+print_prem("\n Média de temperatura no mês: ",int(menor),"°C\n")
 
-enter = input()
+input_prem()
 os.system("cls")
+print_log("Você deseja atualizar pra premium? ")
+enter = input_log()
+if enter == "sim":
+    while(True):
+        email = input("Digite seu email: ")
+        contas = SF.File("contas")
+        contas.create()
+        for x in range(len(contas.all_lines())):
+            email_reg = contas.read_line(x)
+            if email_reg.strip() == email.strip():
+                cpf = input("Digite seu cpf: ")
+                conta_corrente = input("Digite sua conta: ")
+                cpf = "cpf: "+cpf 
+                conta_corrente = "conta corrente: "+conta_corrente
+                contas.replace(x+3,cpf)
+                contas.replace(x+4,conta_corrente)
+                break
+            elif x == len(contas.all_lines()):
+                print("erro conta não encontrada\nTente novamente")
 print("Fim do programa!")
-enter = input()
 os.system("cls")
