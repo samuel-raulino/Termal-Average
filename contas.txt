@@ -1,7 +1,12 @@
-
 ----------
 samuel@gmail.com
 12345678
 premium: False
 cpf: 
 conta corrente: 
+----------
+ss@gmail.com
+senha
+premium: False
+cpf: 9999999999
+conta corrente: 666
